@@ -9,6 +9,7 @@ import repliesRoute from './routes/replies.js';
 import reportsRoute from './routes/reports.js';
 import eventsRoute from './routes/events.js';
 import { createWebSocketServer } from './ws/index.js';
+import { startPinExpireWorker } from './workers/pin-expire.js';
 
 const app = new Hono();
 
@@ -32,9 +33,13 @@ app.route('/api/v1', v1);
 const port = Number(process.env.PORT) || 3000;
 
 const server = serve({ fetch: app.fetch, port }, () => {
-  console.log(`Peemail API running on http://localhost:${port}`);
+  console.log(`Peemail API   → http://localhost:${port}`);
+  console.log(`WebSocket     → ws://localhost:${port}`);
 });
 
-createWebSocketServer(server);
+// 挂载 Socket.io（同进程，共享 HTTP server）
+createWebSocketServer(server as Parameters<typeof createWebSocketServer>[0]);
 
-export default app;
+// 启动 BullMQ Worker
+startPinExpireWorker();
+console.log('BullMQ worker → pin-expire [started]');
