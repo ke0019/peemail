@@ -7,7 +7,7 @@ import {
   check,
 } from 'drizzle-orm/pg-core';
 import { sql } from 'drizzle-orm';
-import { devices } from './devices.js';
+import { devices } from './devices';
 
 /** 行进聊天室（Phase 2） */
 export const motionRooms = pgTable(

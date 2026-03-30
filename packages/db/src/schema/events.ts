@@ -8,7 +8,7 @@ import {
   check,
 } from 'drizzle-orm/pg-core';
 import { sql } from 'drizzle-orm';
-import { geographyPolygon } from '../geo-types.js';
+import { geographyPolygon } from '../geo-types';
 
 export const events = pgTable(
   'events',

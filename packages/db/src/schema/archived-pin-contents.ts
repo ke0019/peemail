@@ -5,8 +5,8 @@ import {
   timestamp,
   index,
 } from 'drizzle-orm/pg-core';
-import { devices } from './devices.js';
-import { pins } from './pins.js';
+import { devices } from './devices';
+import { pins } from './pins';
 
 /**
  * 活动结束后，个人气味钉内容并入官方气味钉的留言区

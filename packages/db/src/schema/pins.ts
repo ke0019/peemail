@@ -9,9 +9,9 @@ import {
   index,
 } from 'drizzle-orm/pg-core';
 import { sql } from 'drizzle-orm';
-import { geographyPoint } from '../geo-types.js';
-import { devices } from './devices.js';
-import { events } from './events.js';
+import { geographyPoint } from '../geo-types';
+import { devices } from './devices';
+import { events } from './events';
 
 export const pins = pgTable(
   'pins',

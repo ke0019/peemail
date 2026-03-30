@@ -8,9 +8,9 @@ import {
   check,
 } from 'drizzle-orm/pg-core';
 import { sql } from 'drizzle-orm';
-import { devices } from './devices.js';
-import { pins } from './pins.js';
-import { replies } from './replies.js';
+import { devices } from './devices';
+import { pins } from './pins';
+import { replies } from './replies';
 
 /** 屏蔽：再也看不到某只动物的气味钉 */
 export const blocks = pgTable(

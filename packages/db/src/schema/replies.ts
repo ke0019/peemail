@@ -7,8 +7,8 @@ import {
   check,
 } from 'drizzle-orm/pg-core';
 import { sql } from 'drizzle-orm';
-import { devices } from './devices.js';
-import { pins } from './pins.js';
+import { devices } from './devices';
+import { pins } from './pins';
 
 export const replies = pgTable(
   'replies',
